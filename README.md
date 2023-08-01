@@ -2,6 +2,7 @@
 
 Steps to reproduce:
 - yarn
+- yarn populate
 - go to react-app and run yarn && yarn build
 - go to card-page and run yarn && yarn build
 - got to root dir and run yarn build
