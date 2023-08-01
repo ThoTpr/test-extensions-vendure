@@ -1,0 +1,48 @@
+<vdr-card style="margin-bottom: 1em">
+  <vdr-data-table-2 id="customer-card-list" [items]="cards!">
+    <vdr-dt2-column
+      [heading]="'customer-card-translation-extension.number' | translate"
+      [hiddenByDefault]="false"
+    >
+      <ng-template let-card="item">
+        {{ card.id }}
+      </ng-template>
+    </vdr-dt2-column>
+    <vdr-dt2-column
+      [heading]="'customer-card-translation-extension.expirationDate' | translate"
+      [hiddenByDefault]="false"
+    >
+      <ng-template let-card="item">
+        {{ card.expirationDate | localeDate : "dd/MM/YYYY" : "fr_FR" }}
+      </ng-template>
+    </vdr-dt2-column>
+    <vdr-dt2-column
+      [heading]="'customer-card-translation-extension.status' | translate"
+      [hiddenByDefault]="false"
+    >
+      <ng-template let-card="item">
+        {{ card.status }}
+      </ng-template>
+    </vdr-dt2-column>
+    <vdr-dt2-column
+      [heading]="'customer-card-translation-extension.initialAmount' | translate"
+      [hiddenByDefault]="false"
+    >
+      <ng-template let-card="item">
+        {{ card.initialAmount / 100 | currency : "EUR" : "symbol" }}
+      </ng-template>
+    </vdr-dt2-column>
+    <vdr-dt2-column
+      [heading]="'customer-card-translation-extension.remainingAmount' | translate"
+      [hiddenByDefault]="false"
+    >
+      <ng-template let-card="item">
+        {{ card.remainingAmount / 100 | currency : "EUR" : "symbol" }}
+      </ng-template>
+    </vdr-dt2-column>
+  </vdr-data-table-2>
+  <div class="bottom-cards">
+    <clr-icon *ngIf="totalItems > 5" shape="ellipsis-horizontal"></clr-icon>
+    <button (click)="goToCardList()">{{ "customer-card-translation-extension.viewAll" | translate }}</button>
+  </div>
+</vdr-card>

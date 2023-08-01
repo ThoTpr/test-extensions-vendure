@@ -1,5 +1,6 @@
 import { compileUiExtensions } from '@vendure/ui-devkit/compiler';
 import path from 'path';
+import { CustomerDetailUiExtensionPlugin } from './plugins/customer/customer-detail-ui-extension.plugin';
 import { ReviewsPlugin } from './plugins/reviews/reviews-plugin';
 import { nonAngularUiExtensions } from './ui-extensions/ui-extensions';
 
@@ -17,7 +18,11 @@ export function customAdminUi(options: { recompile: boolean; devMode: boolean })
     if (options.recompile) {
         return compileUiExtensions({
             outputPath: compiledAppPath,
-            extensions: [ReviewsPlugin.uiExtensions, nonAngularUiExtensions],
+            extensions: [
+                ReviewsPlugin.uiExtensions,
+                CustomerDetailUiExtensionPlugin.uiExtensions,
+                nonAngularUiExtensions,
+            ],
             devMode: options.devMode,
         });
     } else {

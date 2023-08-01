@@ -1,0 +1,16 @@
+<vdr-card style="margin-bottom: 1em" class="optins-container">
+  <div class="checkbox-container">
+    <ng-container *ngFor="let item of optinArray">
+      <div *ngIf="item[0] !== 'optinId'" class="optinCheckbox">
+        <div class="checkbox-content">
+          <input type="checkbox" id="checkbox-{{item[0]}}" [checked]="item[1]" disabled />
+          <label class="yes" for="checkbox-{{item[0]}}">Oui</label>
+          <label class="no" for="checkbox-{{item[0]}}">Non</label>
+          <span>
+            {{ 'customer-optin-translation-extension.'+item[0] | translate }}
+          </span>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</vdr-card>

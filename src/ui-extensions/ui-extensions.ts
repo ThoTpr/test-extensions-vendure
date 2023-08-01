@@ -1,5 +1,5 @@
-import path from 'path';
 import { AdminUiExtension } from '@vendure/ui-devkit/compiler';
+import path from 'path';
 
 /**
  * This demonstrates how to configure a UI extension hosting an application built on
@@ -24,6 +24,12 @@ export const nonAngularUiExtensions: AdminUiExtension = {
             type: 'shared',
             ngModuleFileName: 'shared-ui-extension.module.ts',
             ngModuleName: 'UiSharedModule',
+        },
+        {
+            type: 'lazy',
+            route: 'card-page',
+            ngModuleFileName: 'card-page.module.ts',
+            ngModuleName: 'CardPageModule',
         },
     ],
     staticAssets: [

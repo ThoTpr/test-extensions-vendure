@@ -1,0 +1,44 @@
+.button {
+  
+  &.warning {
+    border-color: $color-chip-warning-border;
+    color: $color-chip-warning-text;
+    background-color: $color-chip-warning-bg;
+
+    &:hover {
+      background-color: $color-chip-warning-bg-hover;
+    }
+  }
+
+  &.success {
+    border-color: $color-chip-success-border;
+    color: $color-chip-success-text;
+    background-color: $color-chip-success-bg;
+
+    &:hover {
+      background-color: $color-chip-success-bg-hover;
+    }
+  }
+
+  &.error {
+    border-color: $color-chip-error-border;
+    color: $color-chip-error-text;
+    background-color: $color-chip-error-bg;
+
+    &:hover {
+      background-color: $color-chip-error-bg-hover;
+    }
+  }
+
+  &.link {
+    background-color: white;
+    color: #0d6efd;
+    border: none;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+  
+}
