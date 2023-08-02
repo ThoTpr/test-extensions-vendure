@@ -38,5 +38,6 @@ export const nonAngularUiExtensions: AdminUiExtension = {
         // Or as an object, in the case that we want to rename the file or directory
         // once copied to the `assets/` dir of the built Admin UI app.
         { path: path.join(__dirname, 'react-app/build'), rename: 'react-app' },
+        { path: path.join(__dirname, 'card-page/dist'), rename: 'card-page' },
     ],
 };
